@@ -1,0 +1,62 @@
+.footer {
+   padding-top: 1rem;
+}
+
+.footer_row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.25rem;
+}
+
+.footer_left {
+}
+.footer_right {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.footer_item {
+   display: flex;
+   align-items: center;
+}
+.footer_item span {
+   margin-right: 0.25rem;
+   font-size: 0.81rem;
+}
+
+.icon_btn {
+   background: transparent;
+   display: flex;
+   align-items: center;
+}
+
+.del_btn {
+   width: 30px;
+   height: 30px;
+}
+
+.del_icon {
+}
+
+.footer_icon {
+   font-size: 1.25rem;
+   cursor: pointer;
+   color: rgb(109, 109, 109);
+}
+
+.footer_icon.like_fill {
+   color: rgb(175, 6, 63);
+}
+
+.footer_icon.like_fill:hover {
+   color: rgba(228, 67, 121, 0.384);
+}
+
+.footer_icon.comment:hover {
+   color: var(--color_blue);
+}
+.footer_icon.like:hover {
+   color: rgb(175, 6, 63);
+}

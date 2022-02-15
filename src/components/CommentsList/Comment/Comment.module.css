@@ -1,0 +1,40 @@
+.comment {
+   padding: 1rem 1rem 0.625rem 1rem;
+   border-radius: 8px;
+   border: 1px solid rgba(39, 39, 39, 0.137);
+}
+.comment_head {
+   display: flex;
+}
+
+.user_img {
+   width: 40px;
+   flex-shrink: 0;
+   overflow: hidden;
+   border-radius: 50%;
+   box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.116);
+   margin-right: 0.625rem;
+}
+
+.comment_info {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex: 1 1 auto;
+}
+.username {
+}
+.username span {
+   font-weight: 600;
+}
+.comment_date {
+   font-size: 0.81rem;
+   font-weight: 300;
+   color: var(--color_grey);
+}
+.comment_body {
+   padding: 1rem 0;
+}
+.comment_body pre {
+   font-weight: 300;
+}

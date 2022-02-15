@@ -1,0 +1,18 @@
+.back_row {
+   color: var(--color_grey);
+   display: flex;
+   align-items: center;
+   padding: 1rem 0;
+   background: transparent;
+}
+
+.back_icon {
+   margin-right: 0.25rem;
+   display: flex;
+   align-items: center;
+   font-size: 1.25rem;
+}
+.body {
+   font-size: 0.825rem;
+   cursor: pointer;
+}

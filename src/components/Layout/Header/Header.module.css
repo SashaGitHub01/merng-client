@@ -1,0 +1,107 @@
+.header {
+   position: relative;
+   height: 62px;
+   display: flex;
+   align-items: center;
+
+   box-shadow: 0 0 22px 5px rgba(49, 49, 49, 0.164);
+}
+
+.header_row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.header_logo {
+   cursor: pointer;
+}
+.header_logo .logo_text {
+   font-size: 1.75rem;
+}
+
+.nav {
+}
+
+.nav_list {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+
+.nav_item {
+   padding: 0.5rem;
+   display: flex;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   z-index: 2;
+   cursor: pointer;
+}
+
+.nav_item span {
+   display: block;
+   color: var(--color_main);
+}
+
+.underline {
+   display: none;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 2px;
+   background-color: var(--color_blue);
+   transition: display 0.5s ease;
+}
+
+.nav_item:hover .underline {
+   display: block;
+}
+
+.nav {
+}
+.user {
+   display: flex;
+   align-items: center;
+}
+.user_img {
+   border-radius: 50%;
+   overflow: hidden;
+   width: 40px;
+   margin-right: 0.5rem;
+}
+.user_img img {
+   max-width: 100%;
+}
+.menu_item {
+   font-weight: 300;
+   display: flex;
+   align-items: center;
+}
+
+.menu_item .menu_icon {
+   margin-right: 0.25rem;
+}
+
+.menu_item .menu_icon.profile {
+   font-size: 1.5rem;
+}
+
+.menu_item span {
+   font-size: 0.75rem;
+   cursor: pointer;
+}
+
+.login_btn {
+}
+.login_btn a {
+}
+
+.border {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 1px;
+   background-color: rgb(199, 199, 199);
+}

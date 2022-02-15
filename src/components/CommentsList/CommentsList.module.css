@@ -1,0 +1,17 @@
+.comms {
+}
+.comms_title {
+   padding: 1rem 0;
+}
+.title_span {
+   font-size: 1.25rem;
+   font-weight: 500;
+   color: var(--color_main);
+}
+
+.comms_list {
+   padding: 1rem 0;
+   display: flex;
+   flex-direction: column;
+   gap: 1.25rem;
+}

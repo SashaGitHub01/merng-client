@@ -1,0 +1,13 @@
+.title {
+   margin-bottom: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.btn_row {
+   display: flex;
+   align-items: center;
+}
+
+.modal {
+}

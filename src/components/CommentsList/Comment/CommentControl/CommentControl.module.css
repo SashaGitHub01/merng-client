@@ -1,0 +1,37 @@
+.footer {
+   justify-content: space-between;
+   color: var(--color_grey);
+   display: flex;
+   align-items: center;
+}
+
+.left_row {
+   display: flex;
+   align-items: center;
+}
+
+.del_btn {
+   width: 30px;
+   height: 30px;
+}
+.right_row {
+   display: flex;
+   align-items: center;
+}
+
+.reply {
+   margin-right: 0.44rem;
+   display: flex;
+   align-items: center;
+}
+.reply_icon {
+   font-size: 1.25rem;
+}
+.creator {
+   font-size: 0.825rem;
+   max-width: 100px;
+   display: block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
