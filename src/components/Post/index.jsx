@@ -12,20 +12,26 @@ const Post = ({ body, id, commentsCount, likesCount, createdAt, user }) => {
       nav(`/post/${id}`)
    }
 
+   const navToUser = () => {
+      nav(`/user/${user?.id}`)
+   }
+
    return (
       <div className={s.post}>
          <div className={s.post_item}>
             <div className={s.post_content}>
                <div className={s.post_head}>
-                  <div className={s.user_img}>
+                  <div className={s.user_img} onClick={navToUser}>
                      <img
-                        src="https://res.cloudinary.com/twitter-uploads/image/upload/v1638945837/Avatars/corhyulgwhglo9bdkz4i.jpg"
+                        src={user.avatar}
                         alt="user"
                      />
                   </div>
                   <div className={s.post_user}>
                      <div className={s.user_name}>
-                        <span>{user.username}</span>
+                        <span onClick={navToUser}>
+                           {user.username}
+                        </span>
                      </div>
                      <div className={s.post_time} onClick={navToPost}>
                         {getPostDate(+createdAt)}
@@ -60,6 +66,7 @@ Post.propTypes = {
    createdAt: PropTypes.string,
    user: PropTypes.shape({
       id: PropTypes.string,
-      username: PropTypes.string
+      username: PropTypes.string,
+      avatar: PropTypes.string
    }),
 }

@@ -3,20 +3,29 @@ import s from './Comment.module.css'
 import PropTypes from 'prop-types'
 import { getPostDate } from '../../../utils/moment'
 import CommentControl from './CommentControl'
+import { useNavigate } from 'react-router'
 
 const Comment = ({ body, id, createdAt, user, postCreator, postId }) => {
+   const nav = useNavigate()
+
+   const navToUser = () => {
+      nav(`/user/${user?.id}`)
+   }
+
    return (
       <div className={s.comment}>
          <div className={s.comment_head}>
-            <div className={s.user_img}>
+            <div className={s.user_img} onClick={navToUser}>
                <img
-                  src="https://res.cloudinary.com/twitter-uploads/image/upload/v1638945837/Avatars/corhyulgwhglo9bdkz4i.jpg"
+                  src={user.avatar}
                   alt=""
                />
             </div>
             <div className={s.comment_info}>
                <div className={s.username}>
-                  <span>{user.username}</span>
+                  <span onClick={navToUser}>
+                     {user.username}
+                  </span>
                </div>
                <div className={s.comment_date}>
                   {getPostDate(+createdAt)}

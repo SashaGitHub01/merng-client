@@ -21,6 +21,7 @@
    flex-shrink: 0;
    width: 40px;
    margin-right: 0.625rem;
+   cursor: pointer;
 }
 
 .user_img img {
@@ -37,6 +38,7 @@
 }
 .user_name span {
    font-weight: 500;
+   cursor: pointer;
 }
 .post_time {
    font-weight: 300;

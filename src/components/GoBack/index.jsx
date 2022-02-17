@@ -8,7 +8,7 @@ const GoBack = ({ children }) => {
    const nav = useNavigate()
 
    const handleBack = () => {
-      nav('/')
+      nav(-1)
    }
 
    return (

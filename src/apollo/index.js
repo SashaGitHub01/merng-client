@@ -1,8 +1,9 @@
 import { createHttpLink, InMemoryCache, ApolloClient, from } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { createUploadLink } from 'apollo-upload-client'
 import { storage } from '../utils/storage'
 
-const link = createHttpLink({
+const link = createUploadLink({
    uri: process.env.REACT_APP_SERVER || 'http://localhost:3001/graphql',
    credentials: 'include'
 })

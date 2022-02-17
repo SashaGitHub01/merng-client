@@ -1,0 +1,17 @@
+.posts {
+   padding: 1.25rem 0;
+}
+.posts_title {
+   padding: 0.5rem 0;
+}
+
+.posts_title span {
+   font-weight: 300;
+   color: var(--color_main);
+   font-size: 1.25rem;
+}
+.posts_list {
+   display: flex;
+   flex-direction: column;
+   gap: 1.375rem;
+}

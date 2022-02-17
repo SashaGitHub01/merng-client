@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import AppRouter from './components/AppRouter/index'
-import './App.css';
+import s from './App.module.css';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import { AUTH_ME } from './graphql/users/mutations';
 import { useAuth } from './hooks/useAuth';
 import { GET_LIKES } from './graphql/likes/query'
+import Loader from './components/Loader';
 
 function App() {
    const [fetchAuth] = useMutation(AUTH_ME)
@@ -47,7 +48,14 @@ function App() {
       <>
          {isInitialized
             ? <AppRouter />
-            : <div>Loading...</div>}
+            : <div className={s.loading}>
+               <div className={s.cont}>
+                  <Loader />
+                  <div className={s.loading_text}>
+                     Loading...
+                  </div>
+               </div>
+            </div>}
       </>
    );
 }

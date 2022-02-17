@@ -22,6 +22,10 @@ const Header = () => {
       nav('/')
    }
 
+   const navToProfile = () => {
+      nav(`/user/${user.id}`)
+   }
+
    const handleClose = () => {
       setVisible(false);
    }
@@ -49,13 +53,13 @@ const Header = () => {
                      </Link>
                      {user
                         ? <div className={s.user}>
-                           <div className={s.user_img}>
+                           <div className={s.user_img} onClick={navToProfile}>
                               <img
-                                 src="https://res.cloudinary.com/twitter-uploads/image/upload/v1638945837/Avatars/corhyulgwhglo9bdkz4i.jpg"
+                                 src={user.avatar}
                                  alt="user"
                               />
                            </div>
-                           <div className="g">
+                           <div className="">
                               <IconButton
                                  ref={anchor}
                                  onClick={handleOpen}
@@ -76,8 +80,8 @@ const Header = () => {
                                  horizontal: 'center'
                               }}
                            >
-                              <MenuItem>
-                                 <div className={s.menu_item}>
+                              <MenuItem className={s.menu_item} onClick={navToProfile}>
+                                 <div className={s.menu_item_content}>
                                     <User
                                        className={`${s.menu_icon} ${s.profile}`}
                                     />
@@ -86,8 +90,8 @@ const Header = () => {
                                     </span>
                                  </div>
                               </MenuItem>
-                              <MenuItem onClick={logout}>
-                                 <div className={s.menu_item}>
+                              <MenuItem onClick={logout} className={s.menu_item}>
+                                 <div className={s.menu_item_content}>
                                     <LogoutIcon
                                        className={s.menu_icon}
                                        color='error'

@@ -6,3 +6,33 @@
    width: 100%;
    font-size: 1rem;
 }
+
+.cont {
+   width: 100%;
+}
+
+.counter {
+   display: flex;
+   align-items: center;
+   gap: 0.31rem;
+}
+
+.progress {
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+
+.circle_up {
+   position: relative;
+   z-index: 5;
+}
+.circle {
+   color: rgba(187, 187, 187, 0.459);
+   position: absolute;
+   left: 0;
+}
+
+.symbols {
+   font-size: 0.76rem;
+}

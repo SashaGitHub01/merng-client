@@ -14,6 +14,7 @@
    border-radius: 50%;
    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.116);
    margin-right: 0.625rem;
+   cursor: pointer;
 }
 
 .comment_info {
@@ -26,6 +27,7 @@
 }
 .username span {
    font-weight: 600;
+   cursor: pointer;
 }
 .comment_date {
    font-size: 0.81rem;

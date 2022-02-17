@@ -69,11 +69,19 @@
    overflow: hidden;
    width: 40px;
    margin-right: 0.5rem;
+   cursor: pointer;
 }
 .user_img img {
    max-width: 100%;
 }
-.menu_item {
+
+.menu_item a {
+   display: block;
+   width: 100%;
+}
+
+.menu_item_content {
+   color: var(--color_main);
    font-weight: 300;
    display: flex;
    align-items: center;

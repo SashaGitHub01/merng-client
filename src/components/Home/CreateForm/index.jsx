@@ -52,6 +52,8 @@ const CreateForm = ({ handleClose }) => {
             <Controller
                render={({ field: { ref, ...fields } }) => {
                   return <Textarea
+                     max={250}
+                     counter={true}
                      {...fields}
                   />
                }}

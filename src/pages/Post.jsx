@@ -5,15 +5,17 @@ import Layout from '../components/Layout'
 import s from '../styles/Post.module.css'
 import Title from '../components/Title'
 import { GET_POST } from '../graphql/posts/query'
+import Loader from '../components/Loader'
 import PostItem from '../components/Post'
 import CommentsList from '../components/CommentsList'
 import GoBack from '../components/GoBack'
+
 
 const Post = () => {
    const params = useParams()
    const [comments, setComments] = useState([])
    const [post, setPost] = useState(null)
-   const [fetchPost, { data, loading, error }] = useLazyQuery(GET_POST);
+   const [fetchPost, { data, loading }] = useLazyQuery(GET_POST);
 
    useEffect(() => {
       if (!loading && data) {
@@ -51,9 +53,9 @@ const Post = () => {
                      post={post}
                   />
                </>
-               : <div>
-                  Loading...
-               </div>}
+               : loading
+                  ? <Loader />
+                  : null}
          </div>
       </Layout>
    )

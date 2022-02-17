@@ -9,11 +9,10 @@ import { IconButton } from '@mui/material'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@apollo/client'
 import * as Yup from 'yup'
-import { CREATE_COMMENT, DELETE_COMMENT } from '../../graphql/comments/mutation'
+import { CREATE_COMMENT } from '../../graphql/comments/mutation'
 import { GET_POST } from '../../graphql/posts/query'
 
 const CommentForm = ({ post }) => {
-   const { user } = useAuth()
    const [fetchCreateComm] = useMutation(CREATE_COMMENT, {
       update: async (cache, { data: { createComment } }) => {
          const data = await cache.readQuery({ query: GET_POST, variables: { id: post.id } })
@@ -35,7 +34,7 @@ const CommentForm = ({ post }) => {
       body: Yup.string().min(1).trim().required()
    })
 
-   const { handleSubmit, control, formState: { isValid, isSubmitting }, reset } = useForm({
+   const { handleSubmit, control, formState: { isValid, isSubmitting }, reset, getValues } = useForm({
       mode: 'onChange',
       resolver: yupResolver(schema)
    })
@@ -62,6 +61,8 @@ const CommentForm = ({ post }) => {
             <Controller
                render={({ field: { ref, ...fields } }) => {
                   return <Textarea
+                     counter={true}
+                     max={150}
                      placeholder={'Type your text...'}
                      {...fields}
                   />
@@ -72,7 +73,7 @@ const CommentForm = ({ post }) => {
             />
             <div className={s.btn_cont}>
                <IconButton type='submit' disabled={!isValid || isSubmitting}>
-                  <SendIcon color={isValid || !isSubmitting ? 'primary' : 'disabled'} />
+                  <SendIcon color={!isValid || isSubmitting ? 'disabled' : 'primary'} />
                </IconButton>
             </div>
          </div>

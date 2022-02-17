@@ -5,6 +5,7 @@ import { GET_POSTS } from '../graphql/posts/query'
 import s from '../styles/Home.module.css'
 import Post from '../components/Post'
 import Head from '../components/Home/Head';
+import Loader from '../components/Loader'
 
 const Home = () => {
    const [posts, setPosts] = useState([]);
@@ -22,9 +23,7 @@ const Home = () => {
          <Head />
          <div className={s.content}>
             {loading
-               ? <div className=''>
-                  Loading...
-               </div>
+               ? <Loader />
                : posts.length > 0
                && <div className={s.grid}>
                   {posts.map((post) => (
